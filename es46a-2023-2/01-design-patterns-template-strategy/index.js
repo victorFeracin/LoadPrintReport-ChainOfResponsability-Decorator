@@ -4,7 +4,7 @@ import Client from './src/LoadChain/Client.js';
 
 const [cmd, filename, format] = process.argv;
 
-let loader = new Client();
+let loader = new Client(); //Instancia de client
 console.log(loader.loadFile('./data/cidades-2.json', format));
 
 // if (format === 'html') {

@@ -1,11 +1,11 @@
 export default class CidadesReporter {
   // caminho = './data/cidades-2.json';
 
-  #ler (caminho) {
+  ler (caminho) {
     this.cidades = fs.readFileSync(caminho);
   }
 
-  #parse () {
+  parse () {
     this.cidades = JSON.parse(this.cidades);
   }
 
@@ -14,8 +14,8 @@ export default class CidadesReporter {
   }
 
   report (caminho) {
-    this.#ler(caminho);
-    this.#parse();
+    this.ler(caminho);
+    this.parse();
     console.log("Output: " + this.output())
     return this.output();
   }
