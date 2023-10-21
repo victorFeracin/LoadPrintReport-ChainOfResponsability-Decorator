@@ -1,11 +1,11 @@
 import CidadesHandler from "./CidadesHandler.js";
 
 export default class CidadesCSVHandler extends CidadesHandler {
-  handleRequest(request, format) {
+  handleRequest(format) {
     if(format.toLowerCase() === 'csv') {
       return "manipulando csv";
     } else {
-      return super.handleRequest(request, format);
+      return super.handleRequest(format);
     }
   }
 }

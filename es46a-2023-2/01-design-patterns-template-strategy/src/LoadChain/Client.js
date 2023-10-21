@@ -3,6 +3,7 @@ import CidadesYAMLHandler from "./CidadesYAMLHandler.js";
 import CidadesCSVHandler from "./CidadesCSVHandler.js";
 import CidadesXMLHandler from "./CidadesXMLHandler.js";
 
+
 export default class Client {
   constructor() {
     this.handler = new CidadesHTMLHandler(); //Inicio da cadeia de responsabilidades
@@ -13,10 +14,12 @@ export default class Client {
     this.handler.setNextHandler(YAMLHandler).setNextHandler(CSVHandler).setNextHandler(XMLHandler); //Encadeamento dos objetos
   }
 
-  loadFile(request, format) { //Método que recebe o input do arquivo e o formato do mesmo
-    this.handler.ler(request);
-    const result = this.handler.handleRequest(request, format);
-    if(!result) return "Tipo de arquivo não suportado.";
+  loadFile(format) {
+    if (format.toLowerCase() !== 'html' && format.toLowerCase() !== 'yaml' && format.toLowerCase() !== 'csv' && format.toLowerCase() !== 'xml') {
+      console.log("Tipo de arquivo para leitura não suportado.");
+      return null;
+    } 
+    const result = this.handler.handleRequest(format);
     console.log(`\nArquivo ${format.toUpperCase()} lido com sucesso!\n\nImprimindo no formato desejado...\n`);
     return result;
   }

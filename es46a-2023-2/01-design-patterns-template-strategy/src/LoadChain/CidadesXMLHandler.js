@@ -1,11 +1,11 @@
 import CidadesHandler from "./CidadesHandler.js";
 
 export default class CidadesXMLHandler extends CidadesHandler {
-  handleRequest(request, format) {
+  handleRequest(format) {
     if(format.toLowerCase() === 'xml') {
       return "manipulando xml";
     } else {
-      return super.handleRequest(request, format);
+      return super.handleRequest(format);
     }
   }
 }

@@ -15,7 +15,7 @@ export default class CidadesHandler {
   }
 
   getCidadesString() {
-    return this.cidades.toString(); //Transforma o arquivo lido em String e retorna a mesma 
+      return this.cidades.toString(); //Transforma o arquivo lido em String e retorna a mesma 
   }
 
   setNextHandler(nextHandler) { //Serve para chamar o próximo handler caso o primeiro não consiga processar a entrada
@@ -23,9 +23,9 @@ export default class CidadesHandler {
     return nextHandler;
   }
 
-  handleRequest(request, format) {
+  handleRequest(format) {
     if (this.nextHandler) {
-      return this.nextHandler.handleRequest(request, format);
+      return this.nextHandler.handleRequest(format);
     }
     return null //Condição de parada se o arquivo n for suportado
   }
