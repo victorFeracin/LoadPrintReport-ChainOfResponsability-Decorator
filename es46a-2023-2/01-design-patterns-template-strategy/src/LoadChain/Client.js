@@ -17,6 +17,7 @@ export default class Client {
     this.handler.ler(request);
     const result = this.handler.handleRequest(request, format);
     if(!result) return "Tipo de arquivo não suportado.";
+    console.log(`\nArquivo ${format.toUpperCase()} lido com sucesso!\n\nImprimindo no formato desejado...\n`);
     return result;
   }
 }
