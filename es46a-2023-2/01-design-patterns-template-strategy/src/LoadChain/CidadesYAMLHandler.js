@@ -17,7 +17,7 @@ export default class CidadesYAMLHandler extends CidadesHandler {
           state = [];
 
         } else if (line.trim().startsWith('- ') && !line.trim().startsWith('- sigla: ')) { //Caso a linha comece com "- " e ñ seja uma sigla, quer dizer que estamos lendo uma cidade
-          const city = line.trim().substring(2); //Remove o "-" e o " " antes do nome das cidades
+          const city = line.trim().substring(2); //Remove o "-" e o " " antes e depois do nome das cidades
           if (state) { //Se o estado não for null, empilha a cidade no array
             state.push(city);
           }
@@ -29,9 +29,9 @@ export default class CidadesYAMLHandler extends CidadesHandler {
         }
       }
 
-      return formattedCities;
+      return formattedCities; //Retorna o array formatado
     } else {
-      return super.handleRequest(format);
+      return super.handleRequest(format); //Caso o formato não seja o especificado para este método, o handler trata
     }
   }
 }
