@@ -12,27 +12,27 @@ const arrayCitiesList = loader.loadFile(formatLoad); //Essa const salva o array 
 
 const dataFormatter = new CidadesFormatter(arrayCitiesList);
 
-switch(formatPrint) {
-  case "xml":
+switch(formatPrint) { //switch case para usuário selecionar tipo de impressão
+  case "xml": //switch case para XML
       console.log('XML:');
       console.log(new XMLFormatter(dataFormatter).format());
       break;
-  case "csv":
+  case "csv": //switch case para CSV
       console.log('\nCSV:');
       console.log(new CSVFormatter(dataFormatter).format());
       break;
-  case "html":    
+  case "html": //switch case para HTML
       console.log('\nHTML:');
       console.log(new HTMLFormatter(dataFormatter).format());
       break;
-  case "yaml":
+  case "yaml": //switch case para YAML
     console.log('\nYAML:');
     console.log(new YAMLFormatter(dataFormatter).format());
     break;
-  case undefined:
+  case undefined: //switch case para erro
     console.log('\nErro ao imprimir: extensão não especificada.');
     break;
-  default:
+  default: //switch case para erro
     console.log(`\nErro ao imprimir: Formato .${formatPrint.toUpperCase()} desconhecido.`);
     break;
 }

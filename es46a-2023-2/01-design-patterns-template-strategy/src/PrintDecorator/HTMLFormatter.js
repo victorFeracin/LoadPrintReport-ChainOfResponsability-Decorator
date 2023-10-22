@@ -1,11 +1,11 @@
 import CidadesDecorator from "./CidadesDecorator.js";
 
 class HTMLFormatter extends CidadesDecorator {
-  format() {
+  format() { //Formatador para HTML
     const tableRows = this.data.map((line) => `<tr><td>${line}</td></tr>`).join('\n');
     const html = `<table>\n${tableRows}\n</table>`;
     return html;
   }
 }
 
-export default HTMLFormatter;
+export default HTMLFormatter; //exportando a classe
