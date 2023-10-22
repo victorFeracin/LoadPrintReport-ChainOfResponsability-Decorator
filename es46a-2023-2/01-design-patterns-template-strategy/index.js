@@ -1,7 +1,9 @@
 import Client from "./src/LoadChain/Client.js";
 import CidadesFormatter from "./src/PrintDecorator/CidadesFormatter.js";
-import XMLFormatter from "./src/PrintDecorator/XMLFormatter.js";
 import CSVFormatter from "./src/PrintDecorator/CSVFormatter.js";
+import HTMLFormatter from "./src/PrintDecorator/HTMLFormatter.js";
+import JSONFormatter from "./src/PrintDecorator/JSONFormatter.js";
+import XMLFormatter from "./src/PrintDecorator/XMLFormatter.js";
 
 const [cmd, filename, formatLoad, formatPrint] = process.argv;
 

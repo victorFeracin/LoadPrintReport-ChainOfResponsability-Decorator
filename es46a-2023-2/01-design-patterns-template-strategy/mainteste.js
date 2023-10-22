@@ -6,10 +6,7 @@ import XMLFormatter from "./src/PrintDecorator/XMLFormatter.js";
 
 // Your example usage code here
 
-const dataList = [
-  { name: 'João', age: 30, city: 'São Paulo' },
-  { name: 'Maria', age: 25, city: 'Rio de Janeiro' },
-];
+const dataList = ['Londrina', 'São Paulo', 'Curitiba'];
 
 const dataFormatter = new CidadesFormatter(dataList);
 

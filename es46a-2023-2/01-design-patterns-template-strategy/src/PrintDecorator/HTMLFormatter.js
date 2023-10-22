@@ -2,15 +2,8 @@ import CidadesDecorator from "./CidadesDecorator.js";
 
 class HTMLFormatter extends CidadesDecorator {
   format() {
-    let html = '<table>\n';
-
-    this.data.forEach((item) => {
-      for (const key in item) {
-        html += `<tr><td>${key}</td><td>${item[key]}</td></tr>\n`;
-      }
-    });
-
-    html += '</table>';
+    const tableRows = this.data.map((line) => `<tr><td>${line}</td></tr>`).join('\n');
+    const html = `<table>\n${tableRows}\n</table>`;
     return html;
   }
 }
