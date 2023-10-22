@@ -1,12 +1,11 @@
-import * as fs from 'node:fs';
-
-export default class CidadesFormatter {
+class CidadesFormatter {
   constructor(data) {
     this.data = data;
-    
   }
 
   format() {
     return this.data;
   }
 }
+
+export default CidadesFormatter;

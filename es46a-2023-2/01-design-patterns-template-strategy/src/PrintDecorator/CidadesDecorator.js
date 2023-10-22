@@ -1,6 +1,6 @@
-import CidadesFormatter from "./CidadesFormatter";
+import CidadesFormatter from "./CidadesFormatter.js";
 
-export default class CidadesDecoratorHTML extends CidadesFormatter{
+class CidadesDecorator extends CidadesFormatter {
   constructor(dataFormatter) {
     super(dataFormatter.data);
     this.dataFormatter = dataFormatter;
@@ -10,3 +10,5 @@ export default class CidadesDecoratorHTML extends CidadesFormatter{
     return this.dataFormatter.format();
   }
 }
+
+export default CidadesDecorator;

@@ -13,6 +13,10 @@ class FormatterDecorator extends DataFormatter {
     super(dataFormatter.data);
     this.dataFormatter = dataFormatter;
   }
+
+  format() {
+    return this.dataFormatter.format();
+  }
 }
 
 class XMLFormatter extends FormatterDecorator {

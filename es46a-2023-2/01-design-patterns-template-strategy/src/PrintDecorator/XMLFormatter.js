@@ -1,7 +1,6 @@
-import CidadesDecoratorHTML from "./CidadesDecorator";
-import CidadesFormatter from "./CidadesFormatter";
+import CidadesDecorator from "./CidadesDecorator.js";
 
-export default class FormatterXML extends CidadesDecorator {
+class XMLFormatter extends CidadesDecorator {
   format() {
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
     xml += '<data>\n';
@@ -16,3 +15,5 @@ export default class FormatterXML extends CidadesDecorator {
     return xml;
   }
 }
+
+export default XMLFormatter;
