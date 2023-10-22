@@ -2,7 +2,7 @@ import CidadesDecorator from "./CidadesDecorator.js";
 
 class HTMLFormatter extends CidadesDecorator {
   format() { //Formatador para HTML
-    const lines = this.data.map((line) => `       <li>${line}</li>`).join('\n');
+    const lines = this.data.map((line) => `       <li>${line}</li>`).join('\n'); //Criando um array de <li>
     const html =
 `<!DOCTYPE HTML>
 <html>
