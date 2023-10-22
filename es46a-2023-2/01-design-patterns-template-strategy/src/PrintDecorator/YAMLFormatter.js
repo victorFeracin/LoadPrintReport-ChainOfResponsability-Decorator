@@ -4,7 +4,7 @@ class YAMLFormatter extends CidadesDecorator {
   format() { //Formatador para YAML
     let yamlString = 'cidades:\n'; //Adiciona o atributo cidades
     for (const item of this.data) {
-      yamlString += `- ${this.convertToYAML(item)}\n`; //Adiciona a lista de cidades
+      yamlString += `- ${item}\n`; //Adiciona a lista de cidades
     }
     return yamlString;
   }
