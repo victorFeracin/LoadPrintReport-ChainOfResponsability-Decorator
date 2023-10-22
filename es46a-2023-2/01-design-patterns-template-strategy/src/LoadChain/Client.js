@@ -15,12 +15,19 @@ export default class Client {
   }
 
   loadFile(format) {
-    if (format.toLowerCase() !== 'html' && format.toLowerCase() !== 'yaml' && format.toLowerCase() !== 'csv' && format.toLowerCase() !== 'xml') {
-      console.log("Tipo de arquivo para leitura não suportado.");
+    if(format !== null && format !== undefined) {
+      if (format.toLowerCase() !== 'html' && format.toLowerCase() !== 'yaml' && format.toLowerCase() !== 'csv' && format.toLowerCase() !== 'xml') {
+        console.log("Tipo de arquivo para leitura não suportado.");
+        return null;
+      } 
+      const result = this.handler.handleRequest(format);
+      console.log(`\nArquivo ${format.toUpperCase()} lido com sucesso!\n\nImprimindo no formato desejado...\n`);
+      return result;
+
+    } else {
+      console.log("Erro. Insira uma extensão de arquivo no prompt")
       return null;
-    } 
-    const result = this.handler.handleRequest(format);
-    console.log(`\nArquivo ${format.toUpperCase()} lido com sucesso!\n\nImprimindo no formato desejado...\n`);
-    return result;
+
+    }
   }
 }

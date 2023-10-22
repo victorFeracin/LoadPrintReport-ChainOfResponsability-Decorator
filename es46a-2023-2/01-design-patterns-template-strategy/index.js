@@ -29,4 +29,10 @@ switch(formatPrint) {
     console.log('\nYAML:');
     console.log(new YAMLFormatter(dataFormatter).format());
     break;
+  case undefined:
+    console.log('\nErro ao imprimir: extensão não especificada.');
+    break;
+  default:
+    console.log(`\nErro ao imprimir: Formato .${formatPrint.toUpperCase()} desconhecido.`);
+    break;
 }
