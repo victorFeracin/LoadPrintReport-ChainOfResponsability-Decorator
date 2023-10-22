@@ -1,11 +1,11 @@
 import CidadesDecorator from "./CidadesDecorator.js";
 
 class YAMLFormatter extends CidadesDecorator {
-  format() {
+  format() { //Formatador para YAML
     return this.convertToYAML(this.data);
   }
 
-  convertToYAML(data) {
+  convertToYAML(data) { //Converte os dados para YAML
     if (Array.isArray(data)) {
       return this.convertArrayToYAML(data);
     } else if (typeof data === 'object') {
@@ -15,7 +15,7 @@ class YAMLFormatter extends CidadesDecorator {
     }
   }
 
-  convertArrayToYAML(array) {
+  convertArrayToYAML(array) { //Converte array string para YAML
     let yamlString = 'cidades:\n';
     for (const item of array) {
       yamlString += `- ${this.convertToYAML(item)}\n`;
@@ -23,7 +23,7 @@ class YAMLFormatter extends CidadesDecorator {
     return yamlString;
   }
 
-  convertObjectToYAML(object) {
+  convertObjectToYAML(object) { //Converte array object para YAML
     let yamlString = '';
     for (const key in object) {
       yamlString += `${key}: ${this.convertToYAML(object[key])}\n`;
@@ -32,4 +32,4 @@ class YAMLFormatter extends CidadesDecorator {
   }
 }
 
-export default YAMLFormatter;
+export default YAMLFormatter; //exportando a classe

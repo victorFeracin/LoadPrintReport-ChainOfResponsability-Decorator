@@ -1,7 +1,7 @@
 import CidadesDecorator from "./CidadesDecorator.js";
 
 class HTMLFormatter extends CidadesDecorator {
-  format() {
+  format() { //Formatador para HTML
     const lines = this.data.map((line) => `       <li>${line}</li>`).join('\n');
     const html =
 `<!DOCTYPE HTML>
@@ -21,4 +21,4 @@ class HTMLFormatter extends CidadesDecorator {
   }
 }
 
-export default HTMLFormatter;
+export default HTMLFormatter; //exportando a classe
