@@ -16,7 +16,7 @@ class YAMLFormatter extends CidadesDecorator {
   }
 
   convertArrayToYAML(array) { //Converte array string para YAML
-    let yamlString = '';
+    let yamlString = 'cidades:\n';
     for (const item of array) {
       yamlString += `- ${this.convertToYAML(item)}\n`;
     }

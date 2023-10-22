@@ -15,17 +15,18 @@ export default class Client {
   }
 
   loadFile(format) {
-    if(format !== null && format !== undefined) {
-      if (format.toLowerCase() !== 'html' && format.toLowerCase() !== 'yaml' && format.toLowerCase() !== 'csv' && format.toLowerCase() !== 'xml') {
-        console.log("Tipo de arquivo para leitura não suportado.");
+    if(format !== null && format !== undefined) { //Verificação caso não seja especificado nenhum valor para o formatLoader no prompt
+      if (format.toLowerCase() !== 'html' && format.toLowerCase() !== 'yaml' && format.toLowerCase() !== 'csv' && format.toLowerCase() !== 'xml') { //Verificaçao para caso o formato seja diferente dos especificados
+        console.log(`\nTipo de arquivo ".${format.toUpperCase()}" para leitura não suportado.`);
         return null;
+
       } 
-      const result = this.handler.handleRequest(format);
+      const result = this.handler.handleRequest(format); //Inicia a chamada dos métodos das instâncias na cadeia
       console.log(`\nArquivo ${format.toUpperCase()} lido com sucesso!\n\nImprimindo no formato desejado...\n`);
-      return result;
+      return result; //Retorno do array contendo as cidades
 
     } else {
-      console.log("Erro. Insira uma extensão de arquivo no prompt")
+      console.log("\nErro. Insira uma extensão de arquivo para carregamento no prompt")
       return null;
 
     }
